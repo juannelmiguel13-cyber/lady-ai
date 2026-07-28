@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #09090b;
+  --color-foreground: #fafafa;
+  --color-primary: #10b981;
+  --color-primary-foreground: #022c22;
+  --color-card: rgba(24, 24, 27, 0.4);
+  --color-card-border: rgba(255, 255, 255, 0.08);
+  --color-muted: #27272a;
+  --color-muted-foreground: #a1a1aa;
+  
+  --radius-lg: 1rem;
+  --radius-md: 0.75rem;
+  --radius-sm: 0.5rem;
+}
+
+@layer base {
+  :root {
+    --background: #09090b;
+    --foreground: #fafafa;
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    /* Modern gradient mesh background for a premium feel */
+    background-image: 
+      radial-gradient(at 0% 0%, hsla(160, 100%, 15%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, hsla(240, 100%, 15%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, hsla(280, 100%, 15%, 0.3) 0px, transparent 50%),
+      radial-gradient(at 0% 100%, hsla(160, 100%, 15%, 0.3) 0px, transparent 50%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-[var(--color-card)] backdrop-blur-xl border border-[var(--color-card-border)] shadow-xl;
+  }
+}
